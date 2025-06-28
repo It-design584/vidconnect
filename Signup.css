@@ -128,7 +128,7 @@ header {
 }
 
 .mobile-menu-btn:hover span {
-  background-color: #9b4dca;
+  background-color: #6a00ff;
   transform: scaleX(1.1);
 }
 
@@ -459,7 +459,7 @@ footer {
   }
 
   .mobile-menu-btn:hover span {
-    /* background-color: #ffffff; */
+    background-color: #000;
     transform: none;
   }
 

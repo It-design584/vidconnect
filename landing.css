@@ -67,7 +67,7 @@ a {
 .desktop-nav ul {
   display:flex;
   list-style:none;
-  gap:10px;
+  gap:25px;
   margin-right:20px;
 }
 
@@ -110,10 +110,11 @@ a {
   z-index: 1001;
   transition: transform 0.2s ease;
 }
+/* this to make the cancel sign enlarge */
 
-.mobile-menu-btn:hover {
+mobile-menu-btn:hover {
   transform: scale(1.1);
-}
+} 
 
 .mobile-menu-btn span {
   width: 25px;
@@ -122,40 +123,36 @@ a {
   margin: 3px 0;
   transition: all 0.3s ease;
   border-radius: 2px;
-}
-
+} 
+/* for the colour and enlargement of the hamburger */
 .mobile-menu-btn:hover span {
   background-color: #6a00ff;
-  transform: scaleX(1.1);
-}
+  /* transform: scaleX(1.1); */
+} 
 
-.mobile-menu-btn:hover span:nth-child(1) {
-  transform: scaleX(1.2);
-}
-
-.mobile-menu-btn:hover span:nth-child(2) {
-  transform: scaleX(0.9);
-}
-
+.mobile-menu-btn:hover span:nth-child(1),
+.mobile-menu-btn:hover span:nth-child(2), 
 .mobile-menu-btn:hover span:nth-child(3) {
-  transform: scaleX(1.2);
+  transform: none
 }
 
 .mobile-menu-btn.active span:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(-45deg) 
+  translate(-5px, 6px); 
   background-color: #6a00ff;
-}
+} 
 
 .mobile-menu-btn.active span:nth-child(2) {
   opacity: 0;
-}
+} 
 
 .mobile-menu-btn.active span:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(45deg) 
+  translate(-5px, -6px); 
   background-color: #6a00ff;
-}
+} 
 
-/* Mobile Navigation */
+/* Mobile Navigation (to make the about and plans be inside the hamburger*/
 .mobile-nav {
   display: none;
   position: fixed;
@@ -172,7 +169,7 @@ a {
 
 .mobile-nav.active {
   transform: translateX(0);
-}
+} 
 
 .mobile-nav ul {
   list-style: none;
@@ -189,27 +186,46 @@ a {
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease,transform 0.2s ease;
   padding: 10px 20px;
   border-radius: 8px;
+  position: relative;
 }
-
+/* this make the li hover */
 .mobile-nav a:hover {
   color: #6a00ff;
+  transform: translateY(-2px);
 }
 
-.mobile-nav a:active {
+.mobile-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #6a00ff;
+  transition: width 0.3s ease;
+}
+
+.mobile-nav a:hover::after {
+  width: 80%;
+}
+
+
+/* i dont understand this yet */
+mobile-nav a:active {
   background-color: rgba(106, 0, 255, 0.1);
   color: #6a00ff;
   transform: scale(0.98);
 }
-
+/* this remove the sign when the hamburger is clicked and returns the sign up button when the cancel is clicked,but the hamburger is displaying on smaller screen and controls the desktop signup */
 .signup-btn {
   padding: 8px 16px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: transparent;
   color: #141eff;
   border: 1px solid #141eff;
@@ -217,12 +233,32 @@ a {
   white-space: nowrap;
   z-index: 1001;
   position: relative;
-}
+} 
 
 .signup-btn:hover {
   background-color: #141eff;
   color: white;
+} 
+ .mobile-signup {
+  display: block;
+  background-color: white;
+  border: 1px solid #0f0dcf;
+  color: #0f0dcf;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px auto 0;
+  text-align: center;
+  transition: all 0.3s ease;
 }
+
+.mobile-signup:hover {
+  background-color: #0f0dcf;
+  color: white;
+}
+
 
 /* Hero Section */
 .hero {
@@ -263,7 +299,6 @@ a {
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
-  transition: all 0.3s ease;
   font-weight: 500;
 }
 
@@ -514,6 +549,10 @@ footer {
     padding: 15px 20px;
   }
 
+  .mobile-signup {
+    display: none;
+  }
+
   .desktop-nav ul {
     gap: 15px;
     margin-left: 100px;
@@ -525,7 +564,8 @@ footer {
 
   .signup-btn {
     padding: 6px 12px;
-    font-size: 12px;
+    font-size: 14px;
+    /* margin: 20px auto 0; */
   }
 
   .hero {
@@ -748,6 +788,7 @@ footer {
     margin-left: 300px;
   }
 }
+
 
 #backToTopBtn {
   position: fixed;

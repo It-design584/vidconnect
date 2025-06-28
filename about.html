@@ -13,35 +13,44 @@
         <!-- Header -->
         <header>
             <!-- Added another comment -->
-            <div class="logo">
-                <img src="Vector.png" alt="Vidco logo">
+            <!-- <div class="logo">
+                <img src="Images/Vector.png" alt="Vidco logo">
                 <span class="logo-text">vidco</span>
-            </div>
+            </div> -->
             
             <!-- Desktop Navigation -->
+            <div class="logo">
+                <img src="Images/scalar.png" alt="Vidco logo">
+                <span class="logo-text">vidco</span>
+            </div>
             <nav class="desktop-nav">
+            <div class="navbar_ul">
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Plans</a></li>
+                    <li><a href="#" id="desktopAbout">About</a></li>
+                    <li><a href="#"id="desktopPlans" >Plans</a></li>
                 </ul>
+                <button class="sign-up-btn"id="desktopSignup">Sign Up</button>
+        </div>
             </nav>
+
+           <!-- Mobile Menu Button -->
+<button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
             
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- Mobile Navigation  onclick="toggleMobileMenu()-->
+           <nav class="mobile-nav" id="mobileNav">
             
-            <button class="sign-up-btn">Sign Up</button>
-            
-            <!-- Mobile Navigation -->
-            <nav class="mobile-nav" id="mobileNav">
-                <ul>
-                    <li><a href="#" onclick="toggleMobileMenu()">About</a></li>
-                    <li><a href="#" onclick="toggleMobileMenu()">Plans</a></li>
-                </ul>
-            </nav>
+    <ul>
+        <li><a href="#"  id="mobileAbout" >About</a></li>
+        <li><a href="#" id="mobilePlans">Plans</a></li>
+    </ul>
+    <button class="sign-up-btn mobile-only" id="mobilenav_Signup">Sign Up</button>
+</nav>
+
         </header>
 
         <!-- Hero Section -->
@@ -259,7 +268,7 @@
         <footer>
             <div class="footer-left">
                 <div class="logo">
-                    <img src="Vector.png" alt="Vidco logo">
+                    <img src="Images/scalar.png" alt="Vidco logo">
                     <span class="logo-text">vidco</span>
                 </div>
                 <a href="#" class="about-link">About Vidco</a>
@@ -271,5 +280,8 @@
         </footer>
     </div>
     <script src="about.js"></script>
+    <!-- Back to Top Button -->
+<button id="backToTopBtn" title="Back to Top">&#8679;</button>
+
 </body>
 </html>
