@@ -19,17 +19,17 @@ const team = [
   {
     name: "Okon Joseph Itoro",
     role: "Frontend developer",
-    image: "itoro.jpg",
+    image: "Images/itoro.jpg",
   },
   {
     name: "Isinkaye Iyanu",
     role: "Software developer and Content Creator",
-    image: "Iyanu.jpg",
+    image: "Images/Iyanu.jpg",
   },
   {
     name: "Isaac Gabriel Umoh",
     role: "Frontend developer and Musical Instrumentalists",
-    image: "fine isaac.jpg",
+    image: "Images/fine isaac.jpg",
   },
 ]
 
@@ -80,6 +80,30 @@ document.addEventListener("click", (event) => {
     document.body.style.overflow = "auto"
   }
 })
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("backToTopBtn");
+
+  if (btn) {
+    // Show or hide the button based on scroll position
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    });
+
+    // Scroll to top smoothly when button is clicked
+    btn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+});
+
+
 
 // Close mobile menu on window resize if it's open
 window.addEventListener("resize", () => {
@@ -91,7 +115,61 @@ window.addEventListener("resize", () => {
     menuBtn.classList.remove("active")
     document.body.style.overflow = "auto"
   }
-})
+});
+// Desktop nav links
+ const desktopAbout = document.getElementById("desktopAbout");
+  const desktopPlans = document.getElementById("desktopPlans");
+  const desktopSignup = document.getElementById("desktopSignup");
+  // this is for the other pages yet to be pulled
+  if (desktopAbout) {
+    desktopAbout.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "about.html";
+    });
+  }
+if (desktopPlans) {
+    desktopPlans.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "plans.html";
+    });
+  }
+  if (desktopSignup) {
+    desktopSignup.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "signup.html";
+    });
+  }
+  // mobile nav links      
+   const mobileAbout = document.getElementById("mobileAbout");
+  const mobilePlans = document.getElementById("mobilePlans");
+   const signupBtn = document.getElementById("mobilenav_Signup");
+
+
+  if (mobileAbout) {
+    mobileAbout.addEventListener("click", function (e) {
+      e.preventDefault();
+      toggleMobileMenu();
+      window.location.href = "about.html";
+    });
+  }
+
+  if (mobilePlans) {
+    mobilePlans.addEventListener("click", function (e) {
+      e.preventDefault();
+      toggleMobileMenu();
+      window.location.href = "plans.html";
+    });
+  }
+ 
+  if (signupBtn) {
+    signupBtn.addEventListener("click", function () {
+      window.location.href = "signup.html";
+    });
+  }
+
+
+  
+
 
 // Append all elements
 section.appendChild(heading)
