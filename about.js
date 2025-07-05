@@ -65,6 +65,7 @@ function toggleMobileMenu() {
   const body = document.body
 
   mobileNav.classList.toggle("active")
+  // th button to clos and opn the cancl
   menuBtn.classList.toggle("active")
   body.style.overflow = mobileNav.classList.contains("active") ? "hidden" : "auto"
 }
@@ -102,8 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-
 
 // Close mobile menu on window resize if it's open
 window.addEventListener("resize", () => {
@@ -166,11 +165,7 @@ if (desktopPlans) {
       window.location.href = "signup.html";
     });
   }
-
-
   
-
-
 // Append all elements
 section.appendChild(heading)
 section.appendChild(subheading)

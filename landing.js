@@ -1,70 +1,67 @@
-// Mobile menu functionality - Enhanced from trial.js approach
+// Mobile menu functionality
 function toggleMobileMenu() {
-  const mobileNav = document.getElementById("mobileNav")
-  const menuBtn = document.querySelector(".mobile-menu-btn")
-  const body = document.body
+  const mobileNav = document.getElementById("mobileNav");
+  const menuBtn = document.querySelector(".mobile-menu-btn");
+  const body = document.body;
 
-  mobileNav.classList.toggle("active")
-  menuBtn.classList.toggle("active")
-  body.style.overflow = mobileNav.classList.contains("active") ? "hidden" : "auto"
+  mobileNav.classList.toggle("active");
+  menuBtn.classList.toggle("active");
+  body.style.overflow = mobileNav.classList.contains("active") ? "hidden" : "auto";
 }
 
+// Close mobile menu when clicking outside
+document.addEventListener("click", (event) => {
+  const mobileNav = document.getElementById("mobileNav");
+  const menuBtn = document.querySelector(".mobile-menu-btn");
 
-// plan, about and signup part //
+  if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
+    mobileNav.classList.remove("active");
+    menuBtn.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+});
+
+// Close mobile menu on window resize if it's open
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    const mobileNav = document.getElementById("mobileNav");
+    const menuBtn = document.querySelector(".mobile-menu-btn");
+
+    mobileNav.classList.remove("active");
+    menuBtn.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+});
+
+// Plan, about and signup part
 const desktopAbout = document.getElementById("desktopAbout");
-  const desktopPlans = document.getElementById("desktopPlans");
-  const desktopSignup = document.getElementById("desktopSignup");
+const desktopPlans = document.getElementById("desktopPlans");
+const desktopSignup = document.getElementById("desktopSignup");
 
-  if (desktopAbout) {
-    desktopAbout.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = "about.html";
-    });
-  }
+if (desktopAbout) {
+  desktopAbout.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "about.html";
+  });
+}
 if (desktopPlans) {
-    desktopPlans.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = "plans.html";
-    });
-  }
-  if (desktopSignup) {
-    desktopSignup.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = "http://127.0.0.1:5500/sign-up/Signup.html";
-    });
-  }
+  desktopPlans.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "plans.html";
+  });
+}
+if (desktopSignup) {
+  desktopSignup.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "http://127.0.0.1:5500/sign-up/Signup.html";
+  });
+}
 
-
-
-  // Redirect function for mobile menu
+// Redirect function for mobile menu
 function goToPage(pageUrl) {
   toggleMobileMenu(); // Close the menu
   window.location.href = pageUrl; // Navigate to the page
 }
-
-  // Close mobile menu when clicking outside
-document.addEventListener("click", (event) => {
-  const mobileNav = document.getElementById("mobileNav")
-  const menuBtn = document.querySelector(".mobile-menu-btn")
-
-  if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
-    mobileNav.classList.remove("active")
-    menuBtn.classList.remove("active")
-    document.body.style.overflow = "auto"
-  }
-})
-
-// Close mobile menu on window resize if it's open
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 640) {
-    const mobileNav = document.getElementById("mobileNav")
-    const menuBtn = document.querySelector(".mobile-menu-btn")
-
-    mobileNav.classList.remove("active")
-    menuBtn.classList.remove("active")
-    document.body.style.overflow = "auto"
-  }
-})
 
 // Call popup functionality
 function openCallPopup() {
@@ -123,4 +120,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Make toggleMobileMenu globally available
-window.toggleMobileMenu = toggleMobileMenu
+window.toggleMobileMenu = toggleMobileMenu;

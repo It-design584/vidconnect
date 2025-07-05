@@ -127,7 +127,7 @@ mobile-menu-btn:hover {
 /* for the colour and enlargement of the hamburger */
 .mobile-menu-btn:hover span {
   background-color: #6a00ff;
-  /* transform: scaleX(1.1); */
+  transform: scaleX(1.1);
 } 
 
 .mobile-menu-btn:hover span:nth-child(1),
@@ -137,8 +137,7 @@ mobile-menu-btn:hover {
 }
 
 .mobile-menu-btn.active span:nth-child(1) {
-  transform: rotate(-45deg) 
-  translate(-5px, 6px); 
+  transform: rotate(-45deg) translate(-5px, 6px); 
   background-color: #6a00ff;
 } 
 
@@ -147,8 +146,7 @@ mobile-menu-btn:hover {
 } 
 
 .mobile-menu-btn.active span:nth-child(3) {
-  transform: rotate(45deg) 
-  translate(-5px, -6px); 
+  transform: rotate(45deg) translate(-5px, -6px); 
   background-color: #6a00ff;
 } 
 
@@ -191,6 +189,12 @@ mobile-menu-btn:hover {
   border-radius: 8px;
   position: relative;
 }
+mobile-nav a:active {
+  background-color: rgba(106, 0, 255, 0.1);
+  color: #6a00ff;
+  transform: scale(0.98);
+}
+
 /* this make the li hover */
 .mobile-nav a:hover {
   color: #6a00ff;
