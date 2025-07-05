@@ -19,10 +19,12 @@
       <!-- Desktop Navigation -->
       <nav class="desktop-nav">
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Plans</a></li>
+          <li><a href="#" id="desktopAbout">About</a></li>
+          <li><a href="#" id="desktoPlans">Plans</a></li>
         </ul>
+        <button class="sign-up-btn" onclick="window.location.href='verification.html'">Get Started</button>
       </nav>
+      
       
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -30,18 +32,19 @@
         <span></span>
         <span></span>
       </button>
-      
-      <button class="sign-up-btn">Get Started</button>
+    
       
       <!-- Mobile Navigation -->
       <nav class="mobile-nav" id="mobileNav">
         <ul>
-          <li><a href="#" onclick="toggleMobileMenu()">About</a></li>
-          <li><a href="#" onclick="toggleMobileMenu()">Plans</a></li>
+          <li><a href="#" onclick="goToPage('about.html')">About</a></li>
+          <li><a href="#" onclick="goToPage('plan.html')">Plans</a></li>
+          <li><button class="sign-up-btn mobile-nav-btn" onclick="window.location.href='verification.html'">Get Started</button></li>
         </ul>
       </nav>
     </header>
     
+
     <!-- Form section -->
     <main class="main">
       <div class="form-container">
