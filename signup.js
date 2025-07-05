@@ -9,6 +9,31 @@ function toggleMobileMenu() {
   body.style.overflow = mobileNav.classList.contains("active") ? "hidden" : "auto";
 }
 
+
+// plan, about and signup part //
+const desktopAbout = document.getElementById("desktopAbout");
+  const desktopPlans = document.getElementById("desktopPlans");
+  const desktopSignup = document.getElementById("desktopSignup");
+
+  if (desktopAbout) {
+    desktopAbout.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "about.html";
+    });
+  }
+if (desktopPlans) {
+    desktopPlans.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "plans.html";
+    });
+  }
+  
+  // Redirect function for mobile menu
+function goToPage(pageUrl) {
+  toggleMobileMenu(); // Close the menu
+  window.location.href = pageUrl; // Navigate to the page
+}
+
 // Close menu when link is clicked
 document.querySelectorAll(".mobile-nav a").forEach((link) => {
   link.addEventListener("click", () => {

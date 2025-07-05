@@ -35,6 +35,13 @@ if (desktopPlans) {
   }
 
 
+
+  // Redirect function for mobile menu
+function goToPage(pageUrl) {
+  toggleMobileMenu(); // Close the menu
+  window.location.href = pageUrl; // Navigate to the page
+}
+
   // Close mobile menu when clicking outside
 document.addEventListener("click", (event) => {
   const mobileNav = document.getElementById("mobileNav")

@@ -21,6 +21,8 @@
                     <li><a href="#" id="desktopAbout">About</a></li>
                     <li><a href="#" id="desktopPlans">Plans</a></li>
                 </ul>
+
+                <button class="signup-btn desktop-signup" id="desktopSignup">Sign Up</button>
             </nav>
             
             <!-- Mobile Menu Button -->
@@ -32,14 +34,12 @@
 
     
             
-            <button class="signup-btn desktop-signup" id="desktopSignup">Sign Up</button>
-            
             <!-- Mobile Navigation -->
             <nav class="mobile-nav" id="mobileNav">
                 <ul>
-                    <li><a href="#" onclick="toggleMobileMenu()">About</a></li>
-                    <li><a href="#" onclick="toggleMobileMenu()">Plans</a></li>
-                          <li><button class="mobile-signup" onclick="toggleMobileMenu()">Sign Up</button></li>
+                    <li><a href="#" onclick="goToPage('about.html')">About</a></li>
+                    <li><a href="#" onclick="goToPage('plans.html')">Plans</a></li>
+                          <li><button class="mobile-signup" onclick="goToPage('signup.html')">Sign Up</button></li>
                 </ul>
             </nav>
         </header>
@@ -106,7 +106,8 @@
         <section class="cta">
             <h2>Meet & discuss on the go</h2>
             <p>Boost your team's productivity with seamless, high-quality video calls designed for fast-paced collaboration. No more communication delays—switch between devices, record meetings, or finalize decisions with Vidco calling experience. Get started today.</p>
-            <button class="secondary-btn">Get vidco</button>
+            <button class="secondary-btn" onclick="goToPage('signup.html')">Get vidco</button>
+
         </section>
 
         <!-- Footer - FIXED STRUCTURE -->

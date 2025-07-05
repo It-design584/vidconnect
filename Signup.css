@@ -210,6 +210,7 @@ header {
 }
 
 .sign-up-btn {
+  margin-left: 5px;
   padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
