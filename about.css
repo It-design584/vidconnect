@@ -269,7 +269,6 @@ header {
 
 .two-columns {
   display: flex;
-  flex-direction: row;
   gap: 30px;
   margin-top: 20px;
   color: #998da0;
@@ -297,7 +296,8 @@ h2 {
 .bullet-list {
   list-style-type: disc;
   padding-left: 20px;
-   line-height: 1.6;
+  line-height: 1.6;
+ 
 }
 
 .bullet-list li {
@@ -314,7 +314,7 @@ h2 {
 
 .team-image {
   width: 100%;
-  max-width: 1500px;
+  /* max-width: 1500px; */
   height: auto;
   border-radius: 50px;
 }
@@ -752,13 +752,14 @@ footer {
     font-size: 14px;
   }
 
+  h2 {
+    font-size: 24px;
+  }
+
   .two-columns {
     flex-direction: column;
   }
 
-  h2 {
-    font-size: 24px;
-  }
 
   .team-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -993,6 +994,10 @@ footer {
   .simple-design,
   .details {
     padding: 30px 20px;
+  }
+
+  .two-columns {
+    flex-direction: column;
   }
 
   .team-container {

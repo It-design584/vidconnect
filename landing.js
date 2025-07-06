@@ -1,4 +1,4 @@
-// Mobile menu functionality - Enhanced from trial.js approach
+// Mobile menu functionality - (maybe here)
 function toggleMobileMenu() {
   const mobileNav = document.getElementById("mobileNav")
   const menuBtn = document.querySelector(".mobile-menu-btn")
@@ -8,6 +8,30 @@ function toggleMobileMenu() {
   menuBtn.classList.toggle("active")
   body.style.overflow = mobileNav.classList.contains("active") ? "hidden" : "auto"
 }
+
+ // Close mobile menu when clicking outside(maybe here)
+document.addEventListener("click", (event) => {
+  const mobileNav = document.getElementById("mobileNav")
+  const menuBtn = document.querySelector(".mobile-menu-btn")
+
+  if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
+    mobileNav.classList.remove("active")
+    menuBtn.classList.remove("active")
+    document.body.style.overflow = "auto"
+  }
+})
+
+// Close mobile menu on window resize if it's open(maybe here)
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    const mobileNav = document.getElementById("mobileNav")
+    const menuBtn = document.querySelector(".mobile-menu-btn")
+
+    mobileNav.classList.remove("active")
+    menuBtn.classList.remove("active")
+    document.body.style.overflow = "auto"
+  }
+})
 
 
 // plan, about and signup part //
@@ -33,31 +57,6 @@ if (desktopPlans) {
       window.location.href = "http://127.0.0.1:5500/sign-up/Signup.html";
     });
   }
-
-
-  // Close mobile menu when clicking outside
-document.addEventListener("click", (event) => {
-  const mobileNav = document.getElementById("mobileNav")
-  const menuBtn = document.querySelector(".mobile-menu-btn")
-
-  if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
-    mobileNav.classList.remove("active")
-    menuBtn.classList.remove("active")
-    document.body.style.overflow = "auto"
-  }
-})
-
-// Close mobile menu on window resize if it's open
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 640) {
-    const mobileNav = document.getElementById("mobileNav")
-    const menuBtn = document.querySelector(".mobile-menu-btn")
-
-    mobileNav.classList.remove("active")
-    menuBtn.classList.remove("active")
-    document.body.style.overflow = "auto"
-  }
-})
 
 // Call popup functionality
 function openCallPopup() {
